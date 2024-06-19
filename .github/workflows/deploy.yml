@@ -20,18 +20,17 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd my-awesome-site
+          cd real_game_review_site
           gem install bundler
           bundle install
 
       - name: Build site
         run: |
-          cd my-awesome-site
+          cd real_game_review_site
           bundle exec jekyll build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./my-awesome-site/_site
-
+          publish_dir: ./real_game_review_site/_site
